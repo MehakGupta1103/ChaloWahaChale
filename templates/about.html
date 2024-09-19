@@ -1,0 +1,134 @@
+{% extends "headers.html" %}
+{% block content %}
+
+<!-- Main Content -->
+<main class="bg-light bg-gradient" style="margin-top: 0;">
+  <!-- Light gray background for About Us section -->
+  <div style="background-color: #D3D3D3; padding: 20px;">
+    <h2 class="display-1 text-center" style="margin-top: 145px; font-weight: bold; font-family: 'Georgia', serif; letter-spacing: 1px;">About Us</h2>
+  </div>
+
+  <!-- Card with white background and left-right margins -->
+  <div class="card border-primary mx-auto" style="border-left-width: thick; background-color: #FFFFFF; margin: 20px; max-width: 80%;">
+    <div class="card-body">
+      <img src="{{url_for('static',filename='logo.png')}}" class="img-fluid" alt="About Us" style="border-radius: 10px; float: right; width: 30%; height: 30%;"/>
+      <p class="card-text">
+        Welcome to Travel-Itinerary Generator, your one-stop platform for crafting personalized travel plans and seamless itineraries. We recognize that each trip is special, and we're committed to offering the resources you need to make every adventure extraordinary.
+      </p>
+      <p class="card-text">
+        At Travel-Itinerary Generator, we aim to make travel simple and affordable for all. Whether you're setting out solo, with family, or as part of a group, our platform is designed to help you create tailor-made itineraries that reflect your unique preferences and travel goals.
+      </p>
+      <p class="card-text">
+        In today's fast-paced world, quick decision-making is essential. Our platform leverages cutting-edge technology, combining artificial intelligence, data analytics, and a user-friendly interface to deliver a smooth, efficient planning experience. From suggesting destinations to providing real-time updates and budget tracking, we make travel planning a breeze.
+      </p>
+      <p class="card-text">
+        As fellow travel enthusiasts, we at Travel-Itinerary Generator are here to help you get the most out of every trip. Join us on this journey and explore new corners of the world with confidence!
+      </p>
+      <p class="card-text">
+        Ready to turn your dream vacation into a reality? Start planning with Travel-Itinerary Generator today – your next adventure is just a few clicks away!
+      </p>
+    </div>
+  </div>
+</main>
+
+
+
+<!-- Footer -->
+
+<!-- fontawesome is beign ised for social icons -->
+<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+  <div class="social" role="navigation" aria-labelledby="social-heading">
+    <h3 id="social-heading" class="sr-only">Follow us on social media</h3>
+    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#" aria-label="Mastodon"><i class="fa-brands fa-mastodon"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+  <hr class="footer-break">
+  <ul class="footer-links" role="navigation" aria-labelledby="footer-links-heading">
+    <h3 id="footer-links-heading" class="sr-only">Footer Links</h3>
+    <li><a href="#">Site Home</a></li>
+    <li><a href="#">Playground</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Sitemap</a></li>
+    <li><a href="#">Contents</a></li>
+  </ul>
+  <p class="copyright">© 2024 ChaloWahaChale</p>
+</footer>
+
+<style>
+.footer {
+    padding: 40px 0;
+    background-color: #87CEEB; /* Sky Blue */
+    color: #FFFFFF; /* White */
+}
+
+.footer ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    color: #FFFFFF; /* White */
+}
+
+.footer li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.footer ul a {
+    color: #FFFFFF; /* White */
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer ul a:hover {
+    opacity: 1;
+}
+
+.footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.footer .social > a {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #008080; /* Teal */
+    margin: 0 8px;
+    color: #FFFFFF; /* White */
+    opacity: 0.75;
+}
+
+.footer .social > a:hover {
+    opacity: 0.9;
+}
+
+.footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #FFFFFF; /* White */
+    margin-bottom: 0;
+}
+
+.footer .footer-break {
+    height: 2px;
+    border-width: 0;
+    color: #FF4500; /* Sunset Orange */
+    background-color: #FF4500; /* Sunset Orange */
+}
+
+</style>
+
+{% endblock %}
+</body>
+
+</html>

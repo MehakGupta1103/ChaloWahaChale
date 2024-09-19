@@ -1,0 +1,159 @@
+{% extends "headers.html" %}
+{% block content %}
+
+<!-- Main Content -->
+<main>
+  <div class="container">
+    <h1 style="font-family: 'Poppins', sans-serif;">Contact Us</h1>
+    <p class="display-7" style="font-family: 'Open Sans', sans-serif;">
+      If you have any questions or suggestions, please feel free to contact us. We are always looking for ways to
+      improve our service.
+    </p>
+    <div style="display: none;" class="alert alert-success" id="success-alert" role="alert">
+      Thank you for contacting us! We will get back to you soon.
+    </div>
+
+    <form id="form">
+      <div class="mb-3">
+        <label for="name" class="form-label" style="font-family: 'Poppins', sans-serif;">Name :</label>
+        <input type="text" class="form-control" id="name" name="name" value="{{ user_name }}">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label" style="font-family: 'Poppins', sans-serif;">Email :</label>
+        <input type="email" class="form-control" id="email" name="email" value="{{ user_email }}">
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label" style="font-family: 'Poppins', sans-serif;">Message:</label>
+        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+      </div>
+      <input type="submit" class="btn btn-primary" id="button" value="Submit" style="background-color: #F4A460;">
+    </form>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+  <div class="social" role="navigation" aria-labelledby="social-heading">
+    <h3 id="social-heading" class="sr-only">Follow us on social media</h3>
+    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#" aria-label="Mastodon"><i class="fa-brands fa-mastodon"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+  <hr class="footer-break">
+  <ul class="footer-links" role="navigation" aria-labelledby="footer-links-heading">
+    <h3 id="footer-links-heading" class="sr-only">Footer Links</h3>
+    <li><a href="#">Site Home</a></li>
+    <li><a href="#">Playground</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Sitemap</a></li>
+    <li><a href="#">Contents</a></li>
+  </ul>
+  <p class="copyright">© 2024 ChaloWahaChale</p>
+</footer>
+
+<style>
+.footer {
+    padding: 40px 0;
+    background-color: #87CEEB; /* Sky Blue */
+    color: #FFFFFF; /* White */
+}
+
+.footer ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    color: #FFFFFF; /* White */
+}
+
+.footer li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.footer ul a {
+    color: #FFFFFF; /* White */
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer ul a:hover {
+    opacity: 1;
+}
+
+.footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.footer .social > a {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #008080; /* Teal */
+    margin: 0 8px;
+    color: #FFFFFF; /* White */
+    opacity: 0.75;
+}
+
+.footer .social > a:hover {
+    opacity: 0.9;
+}
+
+.footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #FFFFFF; /* White */
+    margin-bottom: 0;
+}
+
+.footer .footer-break {
+    height: 2px;
+    border-width: 0;
+    color: #FF4500; /* Sunset Orange */
+    background-color: #FF4500; /* Sunset Orange */
+}
+
+</style>
+
+<!-- EmailJS Setup -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  emailjs.init('Public Key') // Replace with your emailjs public key
+</script>
+
+<script>
+  const btn = document.getElementById('button');
+  const alerter = document.getElementById('success-alert');
+
+  document.getElementById('form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    btn.value = 'Submitting...';
+
+    const serviceID = 'service_id'; // Replace with your service_id
+    const templateID = 'template_id'; // Replace with your template_id
+
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        alerter.style.display = 'block';
+        btn.value = 'Submitted';
+      }, (err) => {
+        btn.value = 'Submit';
+        alert(JSON.stringify(err));
+      });
+  });
+</script>
+
+{% endblock %}
+</body>
+
+</html>
