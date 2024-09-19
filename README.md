@@ -1,4 +1,3 @@
-```markdown
 # ChaloWahaChale 🌍✈️
 
 **ChaloWahaChale** is a travel itinerary generator that helps users plan trips by offering personalized recommendations for places to visit, things to do, and experiences to explore. The web application uses the power of **Google Generative AI** to assist users in crafting the best travel itineraries based on their preferences.
