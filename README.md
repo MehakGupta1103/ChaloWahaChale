@@ -131,6 +131,3 @@ ChaloWahaChale/
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
-
-This version is properly formatted for Markdown, making it easy to read and follow in GitHub's README viewer. Let me know if you need any additional changes!
